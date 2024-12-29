@@ -19,8 +19,7 @@ class _HomePageState extends State<HomePage> {
   final TextEditingController _taskController = TextEditingController();
   final TextEditingController _datepickController = TextEditingController();
 
-  int _selectedindex = 0; // For tracking the selected tab
-
+  int _selectedindex = 0; 
   @override
   void initState() {
     super.initState();
@@ -29,11 +28,10 @@ class _HomePageState extends State<HomePage> {
 
   void _initializeData() {
     if (_myBox.get("TODOLIST") == null) {
-      // Load default data or show a message
     } else {
       db.loadData();
       db.toDoList = db.toDoList.map((task) {
-        if (task.length < 3) task.add("Long Battle!"); // Default date if missing
+        if (task.length < 3) task.add("Long Battle!");
         return task;
       }).toList();
     }
@@ -57,7 +55,7 @@ class _HomePageState extends State<HomePage> {
 
   void _toggleTaskCompletion(bool? value, int index) {
     setState(() {
-      db.toDoList[index][1] = value ?? false; // Toggle completion state
+      db.toDoList[index][1] = value ?? false; 
     });
     db.updateDataBase();
   }
