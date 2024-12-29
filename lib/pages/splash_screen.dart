@@ -15,9 +15,7 @@ class _SplashScreenState extends State<SplashScreen> {
   }
 
   void _startTimer() async {
-    // Delay for 4 seconds
     await Future.delayed(Duration(seconds: 4), () {
-      // Navigate to the home screen
       Navigator.pushReplacement(
         context,
         MaterialPageRoute(builder: (context) => HomePage()),
@@ -35,11 +33,10 @@ class _SplashScreenState extends State<SplashScreen> {
         begin: Alignment.bottomCenter,
         end: Alignment.topCenter,
         colors: [
-          Color(0xFF8493A8),  // Lighter blue-grey
+          Color(0xFF8493A8),  
           Color(0xFF4A5568),
         ],
-        // stops: [0.4, 1.0], // Now matches the number of colors
-        // tileMode: TileMode.clamp,
+        
     ),
         ),
         child: Center(
@@ -47,7 +44,7 @@ class _SplashScreenState extends State<SplashScreen> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Image.asset(
-                'assets/h.jpg', // Path to your logo
+                'assets/h.jpg', 
                 width: 150,
                 height: 150,
               ),
